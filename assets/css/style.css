@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 16px;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 483px;
+    height: 100%;
+    left: 0;
+    background: url(../../images/bg-main-desktop.png);
+}
+
+main {
+    width: 1048px;
+    height: 525px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 1;
+}
+
+main .card {
+    position: relative;
+    color: #fff;
+}
+
+.card1, .card2 {
+    width: 450px;
+    height: 245px;
+}
+
+/* Card front */
+
+.card .card1 {
+    background: url(../../images/bg-card-front.png) no-repeat;
+    padding: 27px 32px;
+}
+
+.card .card1 .logo {
+    user-select: none;
+}
+
+.card1 .card-num {
+    margin: 55px 0 25px 0px;
+    display: flex;
+}
+
+.card1 .card-num div {
+    margin-right: 15px;
+}
+
+.card-num p {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.card1 .card-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-info .card-name {
+    text-transform: uppercase;
+    opacity: .8;
+    letter-spacing: 2px;
+}
+
+.card-info p {
+    font-size: 14px;
+}
+
+/* Card back */
+
+.card .card2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: url(../../images/bg-card-back.png) no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.card2 p {
+    position: absolute;
+    font-size: 15px;
+    right: 55px;
+    letter-spacing: 2px;
+}
+
+/* Forms */
+
+main .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form, .success {
+    width: 380px;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 16px;
+}
+
+form label p {
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+form label input {
+    height: 45px;
+    background: #fff;
+    outline: none;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    padding-left: 15px;
+    width: 380px;
+}
+
+form label input:focus {
+    border-color: #442456;
+}
+
+form label span {
+    visibility: hidden;
+    color: red;
+    font-size: 12px;
+}
+
+form .other-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.other-info label .input input:first-child {
+    margin-right: 10px;
+}
+
+form .other-info input {
+    width: 100%;
+}
+
+form .other-info label:first-child .input {
+    display: flex;
+}
+
+label input::placeholder {
+    color: #DDDDDD;
+}
+
+button {
+    width: 100%;
+    height: 53px;
+    background: #200A2E;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Complete */
+.success {
+    position: absolute;
+    height: 275px;
+    align-items: center;
+    display: none;
+}
+
+.success h2 {
+    text-transform: uppercase;
+    color: #1B0D26;
+}
+
+.success p {
+    color: #8E8E8F;
+}
+
+
+@media (max-width: 376px) {
+
+    body {
+        
+        align-items: start;
+    }
+
+    body::after {
+        width: 100vw;
+        height: 240px;
+        top: 0;
+    }
+
+    main {
+        width: 343px;
+        height: auto;
+        grid-template: 243px 1fr/ 1fr;
+        margin-bottom: 30px;
+        gap: 30px;
+    }
+
+    .card {
+        width: inherit;
+    }
+
+    .card1, .card2 {
+        width: 286px;
+        height: 157px;
+    }
+
+    .card-num p {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    main .card .card1 {
+        position: absolute;
+        z-index: 1;
+        background-size: cover;
+        left: 0;
+        padding: 27px 20px;
+        top: 90px;
+    }
+
+    .card1 .logo img {
+        height: 31px;        
+    }
+
+    .card1 .card-num {
+        margin: 40px 0 7px 0px;
+    }
+
+    .card-num p {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    .card-info p {
+        font-size: 12px;
+    }
+
+
+    main .card .card2 {
+        position: absolute;
+        bottom: inherit;
+        background-size: cover;
+    }
+
+    form {
+        align-items: start;
+        justify-content: start;
+    }
+
+    form, .success {
+        width: inherit;
+    }
+
+    form label input {
+        width: inherit;
+    }
+
+    .success {
+        margin-top: 280px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+    }
+}
